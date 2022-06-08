@@ -1,0 +1,16 @@
+ let str = "123";
+
+ let Permutation  = (str, result)=>{
+ 	if(str.length == 0){
+ 		console.log(result);
+ 	}
+
+ 	for(let i = 0; i<str.length; i++){
+ 		let rest = str.substring(0, i) + str.substring(i+1)
+ 		Permutation(rest, result+str[i])
+ 	}
+ }
+
+
+ Permutation(str, '');
+  
