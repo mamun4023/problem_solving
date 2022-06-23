@@ -1,0 +1,27 @@
+
+var romanToInt = function(data) {
+	let obj = {
+		"M" : "1000",
+		"D" : "500",
+		"C" : "100",
+		"L" : "50",
+		"X" : "10",
+		"V" : "5",
+		"I" : "1"
+	}
+
+	let result = 0;
+
+   for(let i = 0; i<data.length; i++){
+	   	if(Number(obj[data.charAt(i)]) < Number(obj[data.charAt(i+1)])){
+	   	   let sub = obj[data.charAt(i +1)] - obj[data.charAt(i)]
+	   	   result = result + Number(sub);
+	   	   i++;
+	   }else{
+	   	 let find = obj[data.charAt(i)];
+	   	 result = result + Number(find);
+	   }
+   }
+
+   return result;
+};
