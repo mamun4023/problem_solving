@@ -1,0 +1,17 @@
+let data = "AABBCCDDD";
+
+for(let i = 0; i<data.length; i++){
+  let count = 1;
+
+  if(data[i-1] === data[i]){
+    continue;
+  }else{
+    for(let j = i+1; j<data.length; j++){
+      if(data[i] === data[j]){``
+        count = count +1;
+      } 
+    } 
+  }
+  console.log(count+data[i]);
+  count = 0;
+}
