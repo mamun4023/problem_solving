@@ -1,0 +1,31 @@
+function Addition(data){
+	let sum = 0;
+	for(let i = 0; i<data.length; i++){
+		sum = sum + data[i];
+	}
+	return sum;
+}
+
+var data = "abccbaacz";
+
+let map = new Map();
+for(let i = 0; i<data.length; i++){
+	if(map.has(data[i])){
+		map.get(data[i]).push(i);
+	}else{
+		map.set(data[i], [i])
+	}
+}
+
+// find only repeated characters
+let obj = {};
+map.forEach((value, key)=>{
+	if(value.length > 1){
+		console.log(key + "-->"+ value)
+		// obj[key] = (Addition(value))
+	}
+})
+
+// let min = Math.min(...Object.values(obj));
+// let key = Object.keys(obj).find(k=>obj[k]===min);
+// console.log(key)
