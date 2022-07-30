@@ -1,0 +1,13 @@
+
+var data = "abca";
+
+let map = new Map();
+for(let i = 0; i<data.length; i++){
+	if(map.has(data[i])){
+		map.get(data[i]).push(i);
+	}else{
+		map.set(data[i], [i])
+	}
+}
+
+console.log(map);
